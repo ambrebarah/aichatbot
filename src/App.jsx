@@ -17,7 +17,6 @@ function App() {
     const updatedChats = [...chats];
     const chatIndex = updatedChats.findIndex(chat => chat.id === currentChat);
 
-    // Add user message
     const userMessage = { role: 'user', content: input };
     updatedChats[chatIndex].messages.push(userMessage);
     setChats(updatedChats);
@@ -28,7 +27,6 @@ function App() {
         messages: updatedChats[chatIndex].messages
       });
 
-      // Add AI response
       updatedChats[chatIndex].messages.push({
         role: 'assistant',
         content: response.data.message
@@ -47,10 +45,9 @@ function App() {
     const updatedChats = [...chats];
     const chatIndex = updatedChats.findIndex(chat => chat.id === currentChat);
 
-    // Add user message with image
     const userMessage = {
       role: 'user',
-      content: 'Can you help identify this pet/breed?',
+      content: 'Peux-tu m`aider à identifier cette image?',
       image: base64Image
     };
     updatedChats[chatIndex].messages.push(userMessage);
@@ -61,7 +58,6 @@ function App() {
         image: base64Image
       });
 
-      // Add AI response
       updatedChats[chatIndex].messages.push({
         role: 'assistant',
         content: response.data.message
